@@ -1,0 +1,8 @@
+node {
+    stage('Github') {
+        git branch: 'main', url: 'https://github.com/spring-projects/spring-petclinic.git'
+    }
+    stage('Build') {
+        bat 'mvn clean package'
+    }
+}
